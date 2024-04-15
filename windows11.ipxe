@@ -1,6 +1,6 @@
 #!ipxe
 
-# Microsoft Windows
+# Microsoft Windows 11
 # https://www.microsoft.com
 
 set winpe_arch x64
