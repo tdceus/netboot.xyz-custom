@@ -8,7 +8,7 @@ goto ${menu} ||
 :custom_menu
 menu Tom
 item --gap OS:
-item windows ${space} Windows
+item windows11 ${space} Windows 11
 choose menu || goto custom_exit
 echo ${cls}
 goto ${menu} ||
