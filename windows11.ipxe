@@ -40,11 +40,11 @@ echo
 echo -n URL: ${} && read win_base_url
 echo
 echo netboot.xyz will attempt to load the following files:
-echo ${win_base_url}/${winpe_arch}/bootmgr
-echo ${win_base_url}/${winpe_arch}/bootmgr.efi
-echo ${win_base_url}/${winpe_arch}/boot/bcd
-echo ${win_base_url}/${winpe_arch}/boot/boot.sdi
-echo ${win_base_url}/${winpe_arch}/sources/boot.wim
+echo ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr
+echo ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr.efi
+echo ${win_base_url}/${win_image_type}/${winpe_arch}/boot/bcd
+echo ${win_base_url}/${win_image_type}/${winpe_arch}/boot/boot.sdi
+echo ${win_base_url}/${win_image_type}/${winpe_arch}/sources/boot.wim
 echo ${win_base_url}/configs/${win_image}/install.bat
 echo ${win_base_url}/configs/configure.bat
 echo ${win_base_url}/configs/winpeshl.ini
@@ -61,13 +61,13 @@ kernel http://${boot_domain}/wimboot
 initrd ${win_base_url}/configs/${win_image}/install.bat install.bat
 initrd ${win_base_url}/configs/configure.bat configure.bat
 initrd ${win_base_url}/configs/winpeshl.ini winpeshl.ini
-initrd -n bootmgr     ${win_base_url}/${winpe_arch}/bootmgr       bootmgr ||
-initrd -n bootmgr.efi ${win_base_url}/${winpe_arch}/bootmgr.efi   bootmgr.efi ||      
-initrd -n bcd         ${win_base_url}/${winpe_arch}/boot/bcd      bcd ||
-initrd -n bcd         ${win_base_url}/${winpe_arch}/Boot/BCD      bcd ||
-initrd -n boot.sdi    ${win_base_url}/${winpe_arch}/boot/boot.sdi boot.sdi ||
-initrd -n boot.sdi    ${win_base_url}/${winpe_arch}/Boot/boot.sdi boot.sdi ||
-initrd -n boot.wim    ${win_base_url}/${winpe_arch}/sources/boot.wim boot.wim
+initrd -n bootmgr     ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr       bootmgr ||
+initrd -n bootmgr.efi ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr.efi   bootmgr.efi ||      
+initrd -n bcd         ${win_base_url}/${win_image_type}/${winpe_arch}/boot/bcd      bcd ||
+initrd -n bcd         ${win_base_url}/${win_image_type}/${winpe_arch}/Boot/BCD      bcd ||
+initrd -n boot.sdi    ${win_base_url}/${win_image_type}/${winpe_arch}/boot/boot.sdi boot.sdi ||
+initrd -n boot.sdi    ${win_base_url}/${win_image_type}/${winpe_arch}/Boot/boot.sdi boot.sdi ||
+initrd -n boot.wim    ${win_base_url}/${win_image_type}/${winpe_arch}/sources/boot.wim boot.wim
 boot
 
 :windows_exit
