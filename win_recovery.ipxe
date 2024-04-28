@@ -4,7 +4,7 @@
 # https://www.microsoft.com
 
 set winpe_arch x64
-set win_image Win10_20H2_German_x64
+set win_image MyPC
 set win_image_type normal
 set win_base_url ${win_base_url}
 goto ${menu} ||
@@ -25,8 +25,6 @@ goto ${win_version}
 :image_set
 menu Image
 item MyPC Recovery My PC
-item Win10_20H2_German_x64 Win10_20H2_German_x64
-item Win10_20H2_English_x64 Win10_20H2_English_x64
 choose win_image && goto windows
 
 :pe_arch_set
@@ -45,9 +43,9 @@ echo ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr.efi
 echo ${win_base_url}/${win_image_type}/${winpe_arch}/boot/bcd
 echo ${win_base_url}/${win_image_type}/${winpe_arch}/boot/boot.sdi
 echo ${win_base_url}/${win_image_type}/${winpe_arch}/sources/boot.wim
-echo ${win_base_url}/configs/${win_image}/install.bat
-echo ${win_base_url}/configs/configure.bat
-echo ${win_base_url}/configs/winpeshl.ini
+#echo ${win_base_url}/configs/${win_image}/install.bat
+#echo ${win_base_url}/configs/configure.bat
+#echo ${win_base_url}/configs/winpeshl.ini
 echo
 prompt Press any key to return to Windows Menu...
 goto windows
@@ -58,9 +56,9 @@ isset ${win_base_url} && goto boot || echo URL not set... && goto url_set
 :boot
 imgfree
 kernel http://${boot_domain}/wimboot
-initrd ${win_base_url}/configs/${win_image}/install.bat install.bat
-initrd ${win_base_url}/configs/configure.bat configure.bat
-initrd ${win_base_url}/configs/winpeshl.ini winpeshl.ini
+#initrd ${win_base_url}/configs/${win_image}/install.bat install.bat
+#initrd ${win_base_url}/configs/configure.bat configure.bat
+#initrd ${win_base_url}/configs/winpeshl.ini winpeshl.ini
 initrd -n bootmgr     ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr       bootmgr ||
 initrd -n bootmgr.efi ${win_base_url}/${win_image_type}/${winpe_arch}/bootmgr.efi   bootmgr.efi ||      
 initrd -n bcd         ${win_base_url}/${win_image_type}/${winpe_arch}/boot/bcd      bcd ||
