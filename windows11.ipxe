@@ -24,7 +24,7 @@ goto ${win_version}
 
 :image_set
 menu Image
-item Win11_Recovery
+item MyPC Recovery My PC
 item Win10_20H2_German_x64 Win10_20H2_German_x64
 item Win10_20H2_English_x64 Win10_20H2_English_x64
 choose win_image && goto windows
