@@ -7,10 +7,10 @@ goto ${menu} ||
 
 :custom_menu
 menu Tom
-item --gap OS:
+item --gap Windows OS:
 item windows11 ${space} Windows 11
 item --gap Windows Recovery:
-item win_recovery Windows Recovery menu
+item win_recovery ${space} Windows Recovery menu
 choose menu || goto custom_exit
 echo ${cls}
 goto ${menu} ||
