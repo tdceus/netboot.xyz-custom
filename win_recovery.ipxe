@@ -32,7 +32,7 @@ iseq ${winpe_arch} x64 && set winpe_arch x86 || set winpe_arch x64
 goto windows
 
 :url_set
-echo Set the HTTP URL of an extracted Windows ISO without the trailing slash:
+echo Set the HTTP URL of an extracted Windows recovery image without the trailing slash:
 echo e.g. http://www.mydomain.com/windows
 echo
 echo -n URL: ${} && read win_base_url
