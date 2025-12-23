@@ -27,6 +27,12 @@ menu Image
 item MyPC Recovery My PC
 choose win_image && goto windows
 
+:image_type
+menu ImageType
+item normal Normal
+item recovery Recovery
+choose win_image_type && goto windows
+
 :pe_arch_set
 iseq ${winpe_arch} x64 && set winpe_arch x86 || set winpe_arch x64
 goto windows
