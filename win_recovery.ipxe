@@ -16,6 +16,7 @@ menu ${os}
 item --gap Installers
 item win_install ${space} Load ${os} Installer...
 item --gap Options:
+item image_type ${space} Image Type [ ${win_image_type} ]
 item image_set ${space} Recovery Image [ ${win_image} ]
 item pe_arch_set ${space} Architecture [ ${winpe_arch} ]
 item url_set ${space} Base URL [ ${win_base_url} ]
