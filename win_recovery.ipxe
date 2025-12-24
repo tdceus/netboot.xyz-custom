@@ -26,6 +26,7 @@ goto ${win_version}
 :image_set
 menu Image
 item MyPC Recovery My PC
+item Win11_25H2_English_x64_updated202511 Win11_25H2_English_x64_updated202511
 choose win_image && goto windows
 
 :image_type
